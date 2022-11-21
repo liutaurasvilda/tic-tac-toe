@@ -18,12 +18,16 @@ public class TicTacToe {
         return rowWin() || columnWin() || diagonalWin();
     }
 
-    public boolean haveNoWinner() {
-        return !haveWinner();
-    }
-
     public boolean isDraw() {
         return boardIsAllMarked() && haveNoWinner();
+    }
+
+    private boolean boardIsAllMarked() {
+        return Arrays.stream(board).noneMatch(e -> e == Mark.NONE);
+    }
+
+    private boolean haveNoWinner() {
+        return !haveWinner();
     }
 
     public void mark(Mark mark, Location location) {
@@ -63,9 +67,5 @@ public class TicTacToe {
                 Stream.of(board[0], board[4], board[8]).allMatch(e -> e == Mark.O) ||
                 Stream.of(board[2], board[4], board[6]).allMatch(e -> e == Mark.X) ||
                 Stream.of(board[2], board[4], board[6]).allMatch(e -> e == Mark.O);
-    }
-
-    private boolean boardIsAllMarked() {
-        return Arrays.stream(board).noneMatch(e -> e == Mark.NONE);
     }
 }
