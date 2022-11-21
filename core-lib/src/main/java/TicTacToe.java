@@ -19,7 +19,7 @@ public class TicTacToe {
     }
 
     public boolean isDraw() {
-        return boardIsAllMarked() && haveNoWinner();
+        return haveNoWinner() && boardIsAllMarked();
     }
 
     private boolean boardIsAllMarked() {
