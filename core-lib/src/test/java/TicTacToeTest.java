@@ -63,7 +63,7 @@ class TicTacToeTest {
         }
 
         @Test
-        void when_a_winner_in_row() {
+        void when_winner_in_row() {
             /*
                  | X | X | X |
                  |   |   |   |
@@ -78,7 +78,7 @@ class TicTacToeTest {
         }
 
         @Test
-        void when_a_winner_in_column() {
+        void when_winner_in_column() {
             /*
                  | X |   |   |
                  | X |   |   |
@@ -93,7 +93,7 @@ class TicTacToeTest {
         }
 
         @Test
-        void when_a_winner_in_diagonal() {
+        void when_winner_in_diagonal() {
             /*
                  | X |   |   |
                  |   | X |   |
