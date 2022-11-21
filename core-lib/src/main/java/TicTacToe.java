@@ -11,15 +11,19 @@ public class TicTacToe {
     }
 
     public boolean isFinished() {
-        return hasWinner() || isDraw();
+        return haveWinner() || isDraw();
     }
 
-    public boolean hasWinner() {
+    public boolean haveWinner() {
         return rowWin() || columnWin() || diagonalWin();
     }
 
+    public boolean haveNoWinner() {
+        return !haveWinner();
+    }
+
     public boolean isDraw() {
-        return boardIsAllMarked() && !hasWinner();
+        return boardIsAllMarked() && haveNoWinner();
     }
 
     public void mark(Mark mark, Location location) {
