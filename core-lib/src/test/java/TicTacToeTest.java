@@ -42,7 +42,7 @@ class TicTacToeTest {
     @Nested
     class GameIsFinished {
         @Test
-        void with_draw_when_board_is_all_marked_and_no_winner() {
+        void when_draw_having_board_all_marked_and_no_winner() {
             /*
                  | X | O | X |
                  | O | X | O |
@@ -63,7 +63,7 @@ class TicTacToeTest {
         }
 
         @Test
-        void with_a_row_winner() {
+        void when_a_winner_in_row() {
             /*
                  | X | X | X |
                  |   |   |   |
@@ -78,7 +78,7 @@ class TicTacToeTest {
         }
 
         @Test
-        void with_a_column_winner() {
+        void when_a_winner_in_column() {
             /*
                  | X |   |   |
                  | X |   |   |
@@ -93,7 +93,7 @@ class TicTacToeTest {
         }
 
         @Test
-        void with_a_diagonal_winner() {
+        void when_a_winner_in_diagonal() {
             /*
                  | X |   |   |
                  |   | X |   |
