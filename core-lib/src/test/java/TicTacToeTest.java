@@ -17,13 +17,24 @@ class TicTacToeTest {
     class GameIsNotFinished {
         @Test
         void when_just_started_the_game() {
+            /*
+                 |   |   |  |
+                 |   |   |  |
+                 |   |   |  |
+             */
             assertFalse(game.isFinished());
         }
 
         @Test
         void when_board_is_not_all_marked_and_no_winner() {
+            /*
+                 | X | O |  |
+                 |   |   |  |
+                 |   |   |  |
+             */
             game.mark(Mark.X, Location.ONE);
             game.mark(Mark.O, Location.TWO);
+
             assertFalse(game.isFinished());
         }
     }
@@ -32,6 +43,11 @@ class TicTacToeTest {
     class GameIsFinished {
         @Test
         void with_draw_when_board_is_all_marked_and_no_winner() {
+            /*
+                 | X | O | X |
+                 | O | X | O |
+                 | O | X | O |
+             */
             game.mark(Mark.X, Location.ONE);
             game.mark(Mark.O, Location.TWO);
             game.mark(Mark.X, Location.THREE);
@@ -41,33 +57,52 @@ class TicTacToeTest {
             game.mark(Mark.O, Location.SEVEN);
             game.mark(Mark.X, Location.EIGHT);
             game.mark(Mark.O, Location.NINE);
+
             assertTrue(game.isFinished());
             assertTrue(game.isDraw());
         }
 
         @Test
         void with_a_row_winner() {
+            /*
+                 | X | X | X |
+                 |   |   |   |
+                 |   |   |   |
+             */
             game.mark(Mark.X, Location.ONE);
             game.mark(Mark.X, Location.TWO);
             game.mark(Mark.X, Location.THREE);
+
             assertTrue(game.isFinished());
             assertTrue(game.haveWinner());
         }
 
         @Test
         void with_a_column_winner() {
+            /*
+                 | X |   |   |
+                 | X |   |   |
+                 | X |   |   |
+             */
             game.mark(Mark.X, Location.ONE);
             game.mark(Mark.X, Location.FOUR);
             game.mark(Mark.X, Location.SEVEN);
+
             assertTrue(game.isFinished());
             assertTrue(game.haveWinner());
         }
 
         @Test
         void with_a_diagonal_winner() {
+            /*
+                 | X |   |   |
+                 |   | X |   |
+                 |   |   | X |
+             */
             game.mark(Mark.X, Location.ONE);
             game.mark(Mark.X, Location.FIVE);
             game.mark(Mark.X, Location.NINE);
+
             assertTrue(game.isFinished());
             assertTrue(game.haveWinner());
         }
