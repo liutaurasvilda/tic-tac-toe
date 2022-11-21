@@ -1,8 +1,7 @@
 package io.github.liutaurasvilda.tictactoe;
 
 public enum Mark {
-    X("X"), O("O"),
-    EMPTY(" ");
+    X("X"), O("O"), EMPTY(" ");
 
     private final String symbol;
 

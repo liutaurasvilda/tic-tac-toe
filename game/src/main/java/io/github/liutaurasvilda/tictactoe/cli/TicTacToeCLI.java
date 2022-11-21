@@ -17,6 +17,7 @@ public class TicTacToeCLI {
         TicTacToe game = new TicTacToe();
         game.mark(Mark.X, Location.ONE);
         game.mark(Mark.X, Location.TWO);
+        game.mark(Mark.O, Location.THREE);
 
         System.out.println(game);
     }
